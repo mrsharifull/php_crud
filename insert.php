@@ -26,6 +26,7 @@ if(isset($_POST['submit'])){
     
         if($result){
             $success = "Data Insert Successfully";
+            $success = base64_encode($success);
             $name="";
             $description="";
             header("location:index.php?success=$success");

@@ -16,9 +16,11 @@ if(isset($_GET['id'])){
         $statusUpdate = $con->query($insert);
         if($statusUpdate){
             $success = "Status Updated Successfully";
+            $success = base64_encode($success);
             header("location:index.php?success=$success");
         }else{
             $error = "Status Update Failed";
+            $error = base64_encode($error);
             header("location:index.php?error=$error");
         }
     }

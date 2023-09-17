@@ -29,6 +29,7 @@ if(isset($_POST['submit'])){
                 $success = "Data Updated Successfully";
                 $name="";
                 $description="";
+                $success = base64_encode($success);
                 header("location:index.php?success=$success");
             }else{
                 $error = "Data Updated Failed";
